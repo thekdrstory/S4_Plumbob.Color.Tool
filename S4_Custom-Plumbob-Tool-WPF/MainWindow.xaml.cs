@@ -130,5 +130,13 @@ namespace S4_Custom_Plumbob_Tool_WPF
             p.Start();
         }
 
+        private void Hyperlink_github(object sender, RequestNavigateEventArgs e)
+        {
+            Process p = new Process();
+            p.StartInfo.UseShellExecute = true;
+            p.StartInfo.FileName = "https://github.com/thekdrstory/S4_Plumbob.Color.Tool";
+            p.Start();
+        }
+
     }
 }
