@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>S4_Custom_Plumbob_Tool_WPF</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Haley.WPF" Version="5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="s4pi.Extensions">
+      <HintPath>..\..\1 - References\S4Pi\s4pi.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Interfaces">
+      <HintPath>..\..\1 - References\S4Pi\s4pi.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Package">
+      <HintPath>..\..\1 - References\S4Pi\s4pi.Package.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,189 @@
+﻿<Window x:Class="S4_Custom_Plumbob_Tool_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:S4_Custom_Plumbob_Tool_WPF"
+        xmlns:hw="http://schemas.hpod9.com/haley/wpf"
+        mc:Ignorable="d"
+		Height="500"
+        Width="600"
+		FontSize="14"
+        FontFamily="consolas"
+		WindowStartupLocation="CenterScreen"
+        Background="#121212"
+        Foreground="#FFFFFF"
+        ResizeMode="NoResize"
+        Title="Sims 4 - Custom Plumbob Tool">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!--Background="#121212"
+        Foreground="#FFFFFF"-->
+
+        <!--Info Portion-->
+        <StackPanel
+                Grid.Column="1"
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+            Margin="0,0,0,5">
+            <TextBlock TextWrapping="Wrap"
+					   Text="This app allows you to change the colour of your sim's Plumbob!"/>
+            <TextBlock TextWrapping="Wrap"
+                       Foreground="Yellow"
+					   Text="IMPORTANT INFORMATION!"/>
+            <TextBlock TextWrapping="Wrap"
+					   Text="Pick your colours and click generate."/>
+            <TextBlock TextWrapping="Wrap"
+					   Text="SAVE YOUR FILE AS 'Default.ini' and place it in this directory..."/>
+            <TextBlock TextWrapping="Wrap"
+                       Foreground="Cyan"
+					   Text="Documents\Electronic Arts\The Sims 4\ConfigOverride"/>
+            <TextBlock>
+                <Hyperlink NavigateUri="https://modthesims.info/member.php?u=10313368" 
+                           RequestNavigate="Hyperlink_RequestNavigate">
+                    Created by CrossTheMersey for MTS
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <!--Colour Picker Section-->
+        <TextBlock
+                Grid.Column="1"
+                Grid.Row="2"
+                Text="COLOUR"
+                HorizontalAlignment="Center"/>
+        <TextBlock
+                Grid.Column="2"
+                Grid.Row="2"
+                Text="NAME"
+                HorizontalAlignment="Center"/>
+        <TextBlock
+                Grid.Column="3"
+                Grid.Row="2"
+                Text="COLOR CODE (RGBA)"
+                HorizontalAlignment="Center"/>
+
+        <!--Player Active Colour-->
+        <Button 
+                Grid.Column="1"
+				Grid.Row="3"
+				x:Name="btn_playerActive"
+				Background="#6ec71f"
+                Height="50"
+                Width="50"
+				Margin="2" 
+                Click="Choose_Colour"/>
+        <TextBlock
+			    Grid.Column="2"
+			    Grid.Row="3"
+			    HorizontalAlignment="Center"
+			    VerticalAlignment="Center"
+			    Text="Player Active Color"/>
+        <Label
+			    Grid.Column="3"
+			    Grid.Row="3"
+                Foreground="#FFFFFF"
+			    x:Name="lbl_playerActiveColorCode"
+			    HorizontalAlignment="Left"
+			    VerticalAlignment="Center"
+			    Content="Color Code"/>
+
+        <!--Motive State Yellow-->
+        <Button Grid.Column="1"
+				Grid.Row="4"
+				x:Name="btn_motiveStateYellow"
+				Background="#ffff00"
+				Height="50"
+                Width="50"
+				Margin="2"
+                Click="Choose_Colour"/>
+        <TextBlock
+			    Grid.Column="2"
+			    Grid.Row="4"
+			    HorizontalAlignment="Center"
+			    VerticalAlignment="Center"
+			    Text="Motive State Yellow"/>
+        <Label
+			    Grid.Column="3"
+			    Grid.Row="4"
+                Foreground="#FFFFFF"
+			    x:Name="lbl_motiveStateYellowColorCode"
+			    HorizontalAlignment="Left"
+			    VerticalAlignment="Center"
+			    Content="Color Code"/>
+        <!--Motive State Orange-->
+        <Button Grid.Column="1"
+				Grid.Row="5"
+				x:Name="btn_motiveStateOrange"
+				Background="#ff8000"
+				Height="50"
+                Width="50"
+				Margin="2"
+                Click="Choose_Colour"/>
+        <TextBlock
+			    Grid.Column="2"
+			    Grid.Row="5"
+			    HorizontalAlignment="Center"
+			    VerticalAlignment="Center"
+			    Text="Motive State Orange"/>
+        <Label
+			    Grid.Column="3"
+			    Grid.Row="5"
+                Foreground="#FFFFFF"
+			    x:Name="lbl_motiveStateOrangeColorCode"
+			    HorizontalAlignment="Left"
+			    VerticalAlignment="Center"
+			    Content="Color Code"/>
+        <!--Motive State Red-->
+        <Button Grid.Column="1"
+				Grid.Row="6"
+				x:Name="btn_motiveStateRed"
+				Background="#ff0000"
+				Height="50"
+                Width="50"
+				Margin="2"
+                Click="Choose_Colour"/>
+        <TextBlock
+			    Grid.Column="2"
+			    Grid.Row="6"
+			    HorizontalAlignment="Center"
+			    VerticalAlignment="Center"
+			    Text="Motive State Red"/>
+        <Label
+			    Grid.Column="3"
+			    Grid.Row="6"
+                Foreground="#FFFFFF"
+			    x:Name="lbl_motiveStateRedColorCode"
+			    HorizontalAlignment="Left"
+			    VerticalAlignment="Center"
+			    Content="Color Code"/>
+        <!--Generate Button-->
+        <Button Grid.Column="1"
+				Grid.Row="7"
+				Grid.ColumnSpan="3"
+				Margin="0,0,0,0"
+				HorizontalAlignment="Stretch"
+				HorizontalContentAlignment="Center"
+				Content="GENERATE"
+                Click="Generate_RGBA_Codes"/>
+
+    </Grid>
+</Window>
