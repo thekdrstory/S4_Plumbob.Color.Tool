@@ -6,7 +6,17 @@
     <RootNamespace>S4_Custom_Plumbob_Tool_WPF</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\icon.ico" />
+    <None Remove="Assets\icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Haley.WPF" Version="5.3.2" />
@@ -22,6 +32,11 @@
     <Reference Include="s4pi.Package">
       <HintPath>..\..\1 - References\S4Pi\s4pi.Package.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\icon.ico" />
+    <Resource Include="Assets\icon.png" />
   </ItemGroup>
 
 </Project>
