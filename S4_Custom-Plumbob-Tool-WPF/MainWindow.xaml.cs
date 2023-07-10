@@ -28,7 +28,10 @@ namespace S4_Custom_Plumbob_Tool_WPF
     public partial class MainWindow : Window
     {
         public string newFilePath;
+        public string fileCreatedSuccess = "File created successfully!";
+        public string fileCreatedCanceled = "No file created";
         public bool nameEntered;
+
 
         public MainWindow()
         {
@@ -73,6 +76,7 @@ namespace S4_Custom_Plumbob_Tool_WPF
             else
             {
                 nameEntered = false;
+                MessageBox.Show(fileCreatedCanceled);
             }
 
             if(nameEntered == true)
@@ -85,6 +89,8 @@ namespace S4_Custom_Plumbob_Tool_WPF
                     writer.WriteLine("motivestateorange = " + lbl_motiveStateOrangeColorCode.Content);
                     writer.WriteLine("motivestateyellow = " + lbl_motiveStateYellowColorCode.Content);
                 }
+
+                MessageBox.Show(fileCreatedSuccess);
             }
             else
             {
